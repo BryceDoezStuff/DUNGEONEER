@@ -1,7 +1,7 @@
 # Dungeoneers
 
 ###### DUNGEONEERS
-is a classic metroid vania game with retro pixel graphics developedby king stud.
+is a classic metroid vania game with retro pixel graphics developed by Team Crown.
   This game was made originally for a small month long project but now its a game that will hopefully get updates    every 2 weeks.
 
   you can download DUNGEONEERS from this itch.io page 
@@ -16,7 +16,7 @@ I have not made DUNGEONEERS Compileable from source
 
 - [BryceDoezStuff](https://www.youtube.com/channel/UCubGyggTZA81Mn42sj9LROw) 
 
-### MUSIC:
+### MUSIC / SFX:
 
 - Grayson Rempel
 
