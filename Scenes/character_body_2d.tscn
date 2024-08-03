@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dufd6osqur2xr"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_c1qfs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tdljw"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_c1qfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.321569)
+scale = Vector2(0.246035, 0.246035)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tdljw")
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

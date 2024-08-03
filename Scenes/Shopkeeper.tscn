@@ -1,0 +1,187 @@
+[gd_scene load_steps=18 format=3 uid="uid://cq1p2tqpcfmhg"]
+
+[ext_resource type="Script" path="res://Scripts/Shopkeep.gd" id="1_ql5g8"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_4hdv7"]
+[ext_resource type="Texture2D" uid="uid://crpnmfc3ypunv" path="res://Assets/Images/Shopkeep1.png" id="2_r3ogf"]
+[ext_resource type="Script" path="res://Scripts/TextureButton.gd" id="4_8s21j"]
+[ext_resource type="Script" path="res://Scripts/Button.gd" id="4_bx31s"]
+[ext_resource type="Texture2D" uid="uid://d0mnhb428ikuk" path="res://Assets/Images/Stageitem/Coinred222.png" id="4_djyye"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h48sa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl6hk"]
+atlas = ExtResource("2_r3ogf")
+region = Rect2(0, 0, 154, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0htro"]
+atlas = ExtResource("2_r3ogf")
+region = Rect2(154, 0, 154, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dib7f"]
+atlas = ExtResource("2_r3ogf")
+region = Rect2(308, 0, 154, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57pe2"]
+atlas = ExtResource("2_r3ogf")
+region = Rect2(462, 0, 154, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wsps"]
+atlas = ExtResource("2_r3ogf")
+region = Rect2(616, 0, 154, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wy3ji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl6hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0htro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dib7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57pe2")
+}, {
+"duration": 60.0,
+"texture": SubResource("AtlasTexture_2wsps")
+}],
+"loop": true,
+"name": &"Blink",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_38hm1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureButton:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.43134, 0.43134, 0.43134, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0w2c4"]
+resource_name = "Sold out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureButton:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.385493, 0.385492, 0.385492, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.43134, 0.43134, 0.43134, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_icsfl"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureButton:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t2f6f"]
+_data = {
+"RESET": SubResource("Animation_38hm1"),
+"Sold out": SubResource("Animation_0w2c4"),
+"idle": SubResource("Animation_icsfl")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ql5g8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 320)
+script = ExtResource("2_4hdv7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_h48sa")
+position = Vector2(578, 377)
+scale = Vector2(7.4902, 7.4902)
+sprite_frames = SubResource("SpriteFrames_wy3ji")
+animation = &"Blink"
+frame_progress = 0.114374
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+layout_mode = 0
+offset_left = 59.0
+offset_top = 55.0
+offset_right = 186.0
+offset_bottom = 182.0
+texture_normal = ExtResource("4_djyye")
+stretch_mode = 0
+script = ExtResource("4_8s21j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
+root_node = NodePath("../../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_t2f6f")
+}
+autoplay = "idle"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 548.0
+offset_right = 1133.0
+offset_bottom = 620.0
+text = "Exit
+"
+script = ExtResource("4_bx31s")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

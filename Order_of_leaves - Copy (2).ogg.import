@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dncq1hwsb4o6m"
+path="res://.godot/imported/Order_of_leaves - Copy (2).ogg-d55700cc1c92bee4bf13a3edd1fb16ea.oggvorbisstr"
+
+[deps]
+
+source_file="res://Order_of_leaves - Copy (2).ogg"
+dest_files=["res://.godot/imported/Order_of_leaves - Copy (2).ogg-d55700cc1c92bee4bf13a3edd1fb16ea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

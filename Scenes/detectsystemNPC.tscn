@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl74fb7rawrwq"]
+
+[ext_resource type="Script" path="res://Scenes/Detectinnpc'.gd" id="1_4vyo6"]
+[ext_resource type="Texture2D" uid="uid://cc3s3x4iserj4" path="res://Assets/Images/E.png" id="2_dw72n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_woe5l"]
+radius = 65.4905
+
+[node name="Detectinnpc\'" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_4vyo6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_woe5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(2.67083, 2.67083)
+texture = ExtResource("2_dw72n")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

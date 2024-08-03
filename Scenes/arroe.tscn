@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://itc5vywc81xh"]
+
+[ext_resource type="Script" path="res://Scenes/Arroe.gd" id="1_367nx"]
+[ext_resource type="Texture2D" uid="uid://cdh8ahrl8ntw5" path="res://Assets/Images/Stageitem/Arrowprojectile.png" id="2_qyww3"]
+
+[node name="arroe" type="CharacterBody2D"]
+script = ExtResource("1_367nx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_qyww3")

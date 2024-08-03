@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://i88pfgw2fn17"]
+
+[ext_resource type="Script" path="res://Scenes/Test.gd" id="1_ena6s"]
+[ext_resource type="Texture2D" uid="uid://i1br2ioq5h6h" path="res://Assets/Images/SpriteSheet4bob (2).png" id="2_4q1v4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5yx2"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_np7um"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2i8i"]
+radius = 41.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ena6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_k5yx2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_np7um")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_4q1v4")
+hframes = 11
+
+[node name="Respawn_Timer" type="Timer" parent="."]
+wait_time = 4.338
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(41, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(-36, 0)
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_q2i8i")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_shape_entered" from="Area2D2" to="." method="_on_area_2d_2_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D2" to="." method="_on_area_2d_2_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

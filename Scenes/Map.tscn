@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ndh0yu3nrg21"]
+
+[ext_resource type="Script" path="res://Scenes/Map.gd" id="1_e5bhr"]
+[ext_resource type="Texture2D" uid="uid://doixa6cwto0fl" path="res://Assets/Images/maptest4.png" id="2_n4738"]
+[ext_resource type="Script" path="res://Scenes/Sprite2Dmap.gd" id="3_jdu7e"]
+[ext_resource type="Texture2D" uid="uid://cau0y17g8eb0d" path="res://Assets/Images/Crosshair.png" id="4_jjas8"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5bhr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4096
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 102.0
+color = Color(0.294118, 0.294118, 0.294118, 0.462745)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(102, 40)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_n4738")
+script = ExtResource("3_jdu7e")
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+position = Vector2(94, 51)
+texture = ExtResource("4_jjas8")

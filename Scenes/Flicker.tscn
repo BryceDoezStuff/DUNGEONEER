@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpkrcngbueap0"]
+
+[ext_resource type="Texture2D" uid="uid://cf3xbj0p8sj8q" path="res://Assets/Images/Light_Flicker.png" id="1_0qxp5"]
+[ext_resource type="Script" path="res://Scenes/Flicker.gd" id="2_r7r1n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c0lk"]
+atlas = ExtResource("1_0qxp5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l4vu"]
+atlas = ExtResource("1_0qxp5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ps5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c0lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l4vu")
+}],
+"loop": true,
+"name": &"Flicker",
+"speed": 3.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_2ps5p")
+animation = &"Flicker"
+autoplay = "Flicker"
+script = ExtResource("2_r7r1n")

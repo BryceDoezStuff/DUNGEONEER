@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://pthaolap044m"]
+
+[ext_resource type="Texture2D" uid="uid://xdb55e5bgcmd" path="res://Assets/Images/icon.svg" id="1_vkwxn"]
+[ext_resource type="PackedScene" uid="uid://ch2ev765r4aw2" path="res://Scenes/ropeseg.tscn" id="2_8wwp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1lej"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alfk7"]
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d2wr1"]
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o3ync"]
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sc4e0"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uir5m"]
+size = Vector2(53, 3)
+
+[node name="Rope" type="Node2D"]
+
+[node name="Ropeholder" type="StaticBody2D" parent="."]
+position = Vector2(1, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ropeholder"]
+shape = SubResource("RectangleShape2D_i1lej")
+
+[node name="Icon" type="Sprite2D" parent="Ropeholder/CollisionShape2D"]
+position = Vector2(-5.96046e-08, -1.19209e-07)
+scale = Vector2(0.15625, 0.164063)
+texture = ExtResource("1_vkwxn")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(1, 13)
+node_a = NodePath("../Ropeholder")
+node_b = NodePath("../Ropeseg")
+bias = 0.075
+disable_collision = false
+angular_limit_enabled = true
+motor_enabled = true
+motor_target_velocity = -3.49066
+
+[node name="Ropeseg" parent="." instance=ExtResource("2_8wwp3")]
+position = Vector2(1, 28)
+physics_material_override = SubResource("PhysicsMaterial_alfk7")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(1, 43)
+node_a = NodePath("../Ropeseg")
+node_b = NodePath("../Ropeseg2")
+disable_collision = false
+motor_enabled = true
+motor_target_velocity = -3.49066
+
+[node name="Ropeseg2" parent="." instance=ExtResource("2_8wwp3")]
+position = Vector2(1, 58)
+physics_material_override = SubResource("PhysicsMaterial_d2wr1")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(1, 73)
+node_a = NodePath("../Ropeseg2")
+node_b = NodePath("../Ropeseg3")
+disable_collision = false
+motor_enabled = true
+motor_target_velocity = -3.49066
+
+[node name="Ropeseg3" parent="." instance=ExtResource("2_8wwp3")]
+position = Vector2(1, 88)
+physics_material_override = SubResource("PhysicsMaterial_o3ync")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(1, 103)
+node_a = NodePath("../Ropeseg3")
+node_b = NodePath("../Ropeseg4")
+disable_collision = false
+motor_enabled = true
+motor_target_velocity = -3.49066
+
+[node name="Ropeseg4" parent="." instance=ExtResource("2_8wwp3")]
+position = Vector2(1, 118)
+physics_material_override = SubResource("PhysicsMaterial_sc4e0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(412, 57)
+shape = SubResource("RectangleShape2D_uir5m")

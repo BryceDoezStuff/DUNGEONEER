@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3psf4lrgk6p7"]
+
+[ext_resource type="Texture2D" uid="uid://d4cdrqifemipw" path="res://Assets/Images/Stageitem/Arrowitem.png" id="1_6dbrb"]
+[ext_resource type="Script" path="res://Scenes/mouse.gd" id="2_jwshl"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_6dbrb")
+script = ExtResource("2_jwshl")

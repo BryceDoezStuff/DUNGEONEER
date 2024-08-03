@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://tffnbjrvertk"]
+
+[ext_resource type="Script" path="res://Scenes/How2play.gd" id="1_7uxyh"]
+[ext_resource type="Texture2D" uid="uid://b78fxudog2eg5" path="res://Assets/Images/Screenshot 2024-06-28 113227.png" id="2_b0f0o"]
+[ext_resource type="FontFile" uid="uid://c8c03jmsxuu37" path="res://Fonts/Minecraft.ttf" id="2_bai4p"]
+[ext_resource type="Texture2D" uid="uid://c8kqe4rpnboru" path="res://Assets/Images/Screenshot 2024-06-28 125521.png" id="3_6vpug"]
+[ext_resource type="Texture2D" uid="uid://bi6lpr8gs2piw" path="res://Assets/Images/Screenshot 2024-06-28 113254.png" id="3_ldur2"]
+[ext_resource type="Texture2D" uid="uid://b8kdtspyrfqyh" path="res://Assets/Images/Screenshot 2024-06-28 113019.png" id="5_m6lw2"]
+[ext_resource type="Texture2D" uid="uid://8hefv1lgcnr" path="res://Assets/Images/Screenshot 2024-06-28 113411.png" id="6_gq0ec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrwh5"]
+font = ExtResource("2_bai4p")
+font_size = 8
+font_color = Color(0.996591, 0, 0.267451, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs855"]
+
+[node name="How to play" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7uxyh")
+
+[node name="Next" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 139.0
+offset_top = 68.0
+offset_right = 182.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_bai4p")
+theme_override_font_sizes/font_size = 15
+text = "Next"
+
+[node name="Back" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -180.0
+offset_top = 68.0
+offset_right = -134.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_bai4p")
+theme_override_font_sizes/font_size = 15
+text = "Back"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -137.0
+offset_top = -90.0
+offset_right = 155.0
+offset_bottom = 76.0
+
+[node name="slide1" type="Sprite2D" parent="AspectRatioContainer"]
+visible = false
+position = Vector2(149, 90)
+scale = Vector2(0.405622, 0.405622)
+texture = ExtResource("5_m6lw2")
+
+[node name="slide2" type="Sprite2D" parent="AspectRatioContainer"]
+visible = false
+position = Vector2(140.396, 83.8126)
+scale = Vector2(0.244684, 0.244684)
+texture = ExtResource("3_6vpug")
+
+[node name="slide 3" type="Sprite2D" parent="AspectRatioContainer"]
+visible = false
+position = Vector2(97, 90)
+scale = Vector2(0.316015, 0.316015)
+texture = ExtResource("2_b0f0o")
+
+[node name="slide4" type="Sprite2D" parent="AspectRatioContainer"]
+visible = false
+position = Vector2(149, 77)
+scale = Vector2(0.260803, 0.260802)
+texture = ExtResource("6_gq0ec")
+
+[node name="slide5" type="Sprite2D" parent="AspectRatioContainer"]
+position = Vector2(262, 23)
+scale = Vector2(0.433813, 0.433813)
+texture = ExtResource("3_ldur2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -171.0
+offset_top = 38.0
+offset_right = 62.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 3
+text = "??????????????????????"
+label_settings = SubResource("LabelSettings_hrwh5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xs855")
+frame_progress = 0.28897
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

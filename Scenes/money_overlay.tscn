@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbp2sj7gpemua"]
+
+[ext_resource type="Script" path="res://Scenes/Money overlay.gd" id="1_rmewm"]
+[ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="2_etvaa"]
+[ext_resource type="FontFile" uid="uid://c8c03jmsxuu37" path="res://Fonts/Minecraft.ttf" id="3_o24n3"]
+
+[node name="Money overlay" type="Node2D"]
+script = ExtResource("1_rmewm")
+
+[node name="Gui" type="Sprite2D" parent="."]
+position = Vector2(-21, 5.96046e-08)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("2_etvaa")
+hframes = 9
+vframes = 12
+frame = 26
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = -9.0
+offset_right = 49.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0.482353, 0.313726, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_o24n3")
+theme_override_font_sizes/font_size = 20
+text = "0"
