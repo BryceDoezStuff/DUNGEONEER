@@ -13,9 +13,9 @@ func _ready():
 
 func _physics_process(delta):
 	if thing == 1:
-		velocity.y -= SPEED
-	if thing == 2:
 		velocity.y += SPEED
+	if thing == 2:
+		velocity.y -= SPEED
 	if thing > 2:
 		thing = 1
 	move_and_slide()
