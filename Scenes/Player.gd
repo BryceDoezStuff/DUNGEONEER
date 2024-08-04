@@ -12,7 +12,7 @@ var dash_speed = 1000
 var jumps = 2
 var candash = true
 var jump_count = 0  # New variable to keep track of jumps
-var ontrack = true
+var ontrack = false
 
 
 
@@ -67,20 +67,20 @@ func _physics_process(delta):
 				$AnimationPlayer.play("jump")
 	
 	# Jump handling
-	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
-			$AnimationPlayer.play("jump")
-			velocity.y = -jump_force
-			jump_count = 1  # Reset jump count on first jump
-			print("Jumping from the floor")
-	else:
-		if Input.is_action_just_pressed("jump") and jump_count < Global.modifier:
-			$AnimationPlayer.play("jump")
-			velocity.y = -jump_force
-			jump_count += 1  # Increment jump count on double jump
-			print("Double jump")
-		if not dashing:
-			velocity.y += gravity
+		if is_on_floor():
+			if Input.is_action_just_pressed("jump"):
+				$AnimationPlayer.play("jump")
+				velocity.y = -jump_force
+				jump_count = 1  # Reset jump count on first jump
+				print("Jumping from the floor")
+		else:
+			if Input.is_action_just_pressed("jump") and jump_count < Global.modifier:
+				$AnimationPlayer.play("jump")
+				velocity.y = -jump_force
+				jump_count += 1  # Increment jump count on double jump
+				print("Double jump")
+			if not dashing:
+				velocity.y += gravity
 	
 	if Input.is_action_just_pressed("dash"):
 		$Dashtime.start()

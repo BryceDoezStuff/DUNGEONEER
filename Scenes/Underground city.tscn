@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bfagiwavenign" path="res://Assets/Images/Stageitem/DJ.png" id="10_vpbar"]
 [ext_resource type="AudioStream" uid="uid://btrg3qc2452k6" path="res://Sounds/recharge.ogg" id="11_rigl0"]
 [ext_resource type="PackedScene" uid="uid://pthaolap044m" path="res://Scenes/rope.tscn" id="12_yn0l8"]
-[ext_resource type="AudioStream" uid="uid://bg4h0gqt81wlq" path="res://Order_of_leaves.ogg" id="13_7tdaj"]
+[ext_resource type="AudioStream" uid="uid://bpvhpvjcurf3b" path="res://Sounds/Order_of_leaves.ogg" id="13_7tdaj"]
 [ext_resource type="PackedScene" uid="uid://cl0drvntttf5t" path="res://Scenes/PLayer.tscn" id="14_agjvd"]
 [ext_resource type="PackedScene" uid="uid://i88pfgw2fn17" path="res://Scripts/Test3.tscn" id="15_y6ecs"]
 [ext_resource type="Script" path="res://Scenes/Boss Cam.gd" id="16_lgb48"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://7ytmrtk6x1l3" path="res://Scenes/wizard_boss.tscn" id="18_jrkb6"]
 [ext_resource type="PackedScene" uid="uid://dl74fb7rawrwq" path="res://Scenes/detectsystemNPC.tscn" id="19_3dgyk"]
 [ext_resource type="Texture2D" uid="uid://d0duciwnj7wx2" path="res://Assets/Images/Stageitem/Bigdoor.png" id="20_3exwf"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqg8e"]
 size = Vector2(190, 31.8751)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://c16q51ppljxe0"]
+[gd_scene load_steps=74 format=3 uid="uid://c16q51ppljxe0"]
 
 [ext_resource type="Script" path="res://Scripts/Level3.gd" id="1_li3ir"]
 [ext_resource type="TileSet" uid="uid://dhu301r2ow7he" path="res://Scenes/Tileset.tres" id="2_u3qbk"]
@@ -13,11 +13,12 @@
 [ext_resource type="AudioStream" uid="uid://btrg3qc2452k6" path="res://Sounds/recharge.ogg" id="12_gxfth"]
 [ext_resource type="PackedScene" uid="uid://pthaolap044m" path="res://Scenes/rope.tscn" id="13_dw60f"]
 [ext_resource type="PackedScene" uid="uid://i88pfgw2fn17" path="res://Scripts/Test3.tscn" id="15_0nqfv"]
-[ext_resource type="AudioStream" uid="uid://bg4h0gqt81wlq" path="res://Order_of_leaves.ogg" id="16_2qdcy"]
+[ext_resource type="AudioStream" uid="uid://bpvhpvjcurf3b" path="res://Sounds/Order_of_leaves.ogg" id="16_2qdcy"]
 [ext_resource type="PackedScene" uid="uid://bvni6reknff6c" path="res://Scenes/Chest.tscn" id="16_n6pey"]
 [ext_resource type="Script" path="res://Scenes/Boss Cam.gd" id="16_s5gfl"]
 [ext_resource type="PackedScene" uid="uid://cl0drvntttf5t" path="res://Scenes/PLayer.tscn" id="16_ymrle"]
 [ext_resource type="PackedScene" uid="uid://7ytmrtk6x1l3" path="res://Scenes/wizard_boss.tscn" id="18_jx1lg"]
+[ext_resource type="PackedScene" uid="uid://dobp1ua6e55n4" path="res://Scenes/Spikeything.tscn" id="19_6xbrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqg8e"]
 size = Vector2(190, 31.8751)
@@ -1391,7 +1392,7 @@ rotation = 1.57079
 shape = SubResource("RectangleShape2D_vqg8e")
 
 [node name="Player" parent="." instance=ExtResource("16_ymrle")]
-position = Vector2(740.744, 239.059)
+position = Vector2(740.744, 205.059)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("15_0nqfv")]
 position = Vector2(-65.256, -220.941)
@@ -1446,6 +1447,9 @@ shape = SubResource("RectangleShape2D_1gity")
 
 [node name="WizardBoss" parent="." instance=ExtResource("18_jx1lg")]
 position = Vector2(677.744, 194.059)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("19_6xbrh")]
+position = Vector2(637.744, 243.059)
 
 [connection signal="body_shape_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_entered" from="Area door" to="." method="_on_area_2d_234343_body_shape_entered"]
