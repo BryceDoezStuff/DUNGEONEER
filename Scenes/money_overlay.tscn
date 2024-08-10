@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbp2sj7gpemua"]
 
-[ext_resource type="Script" path="res://Scenes/Money overlay.gd" id="1_rmewm"]
+[ext_resource type="Script" path="res://Scripts/Money overlay.gd" id="1_rmewm"]
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="2_etvaa"]
 [ext_resource type="FontFile" uid="uid://c8c03jmsxuu37" path="res://Fonts/Minecraft.ttf" id="3_o24n3"]
+
 
 [node name="Money overlay" type="Node2D"]
 script = ExtResource("1_rmewm")

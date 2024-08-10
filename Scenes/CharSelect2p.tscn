@@ -1,12 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjcdsy388fl2f"]
 
-[ext_resource type="Script" path="res://Scenes/CHARSELECT2P.gd" id="1_f7i4f"]
+[ext_resource type="Script" path="res://Scripts/CHARSELECT2P.gd" id="1_f7i4f"]
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="2_3mrm3"]
 [ext_resource type="Texture2D" uid="uid://dhnjph5lvoddd" path="res://Assets/Images/GUI/Bobgraphic.png" id="3_jemla"]
 [ext_resource type="Texture2D" uid="uid://dmt2cgghv4p5r" path="res://Assets/Images/Joegraphic.png" id="4_aqasu"]
 [ext_resource type="Texture2D" uid="uid://ci5lfujf2iq0b" path="res://Assets/Images/GUI/Amygraphic.png" id="5_42iay"]
 [ext_resource type="Texture2D" uid="uid://cipst1wwhvww8" path="res://Assets/Images/Tomgraphic.png" id="6_2050g"]
 [ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="7_8q5i8"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxe4g"]
 texture = ExtResource("7_8q5i8")

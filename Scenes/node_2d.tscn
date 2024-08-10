@@ -14,14 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://ck425h4b4u0wf" path="res://Assets/Images/SpriteSheet4bobpayer2 - amy.png" id="8_t5u8p"]
 [ext_resource type="PackedScene" uid="uid://dmtxdbc0norax" path="res://Scenes/Debug_mode.tscn" id="9_u8hdv"]
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="10_124x3"]
-[ext_resource type="Script" path="res://Scenes/HUD.gd" id="12_660nu"]
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="12_660nu"]
 [ext_resource type="PackedScene" uid="uid://nk7joy7np4ua" path="res://Inventory/Inventory(s)/inventory_ui.tscn" id="12_vgaod"]
 [ext_resource type="PackedScene" uid="uid://ndh0yu3nrg21" path="res://Scenes/Map.tscn" id="13_ekx15"]
 [ext_resource type="Texture2D" uid="uid://jrhs3ahxa8v4" path="res://Assets/Images/Stageitem/Arrows.png" id="14_aeuo8"]
 [ext_resource type="PackedScene" uid="uid://pnmlujjg3pkh" path="res://Scenes/player2.tscn" id="14_i0ylm"]
 [ext_resource type="FontFile" uid="uid://c8c03jmsxuu37" path="res://Fonts/Minecraft.ttf" id="15_rhu85"]
 [ext_resource type="PackedScene" uid="uid://itc5vywc81xh" path="res://Scenes/arroe.tscn" id="18_f61b2"]
-[ext_resource type="Script" path="res://Scenes/Spawner.gd" id="22_0xwxu"]
+[ext_resource type="Script" path="res://Scripts/Spawner.gd" id="22_0xwxu"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gtso6"]
 atlas = ExtResource("2_bpo42")

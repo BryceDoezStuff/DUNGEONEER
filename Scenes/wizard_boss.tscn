@@ -1,7 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://7ytmrtk6x1l3"]
 
-[ext_resource type="Script" path="res://Scenes/WizardBoss.gd" id="1_dptar"]
+[ext_resource type="Script" path="res://Scripts/WizardBoss.gd" id="1_dptar"]
 [ext_resource type="Texture2D" uid="uid://cvvrni1w10d3s" path="res://Assets/Images/Characters/Boss1.png" id="2_nk4ug"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nn8f3"]
 radius = 8.0

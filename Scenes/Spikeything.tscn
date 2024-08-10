@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dobp1ua6e55n4"]
 
-[ext_resource type="Script" path="res://Spikeyboi.gd" id="1_tyksp"]
+[ext_resource type="Script" path="res://Scripts/Spikeyboi.gd" id="1_tyksp"]
 [ext_resource type="Texture2D" uid="uid://djr768di8idmy" path="res://Assets/Images/Characters/Means/Spikeyboy.png" id="2_ox5le"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofh14"]
@@ -9,7 +9,7 @@ size = Vector2(11, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3x053"]
 size = Vector2(2, 11)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Spikeyboi" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_tyksp")

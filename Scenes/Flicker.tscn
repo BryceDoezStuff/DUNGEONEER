@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpkrcngbueap0"]
 
 [ext_resource type="Texture2D" uid="uid://cf3xbj0p8sj8q" path="res://Assets/Images/Light_Flicker.png" id="1_0qxp5"]
-[ext_resource type="Script" path="res://Scenes/Flicker.gd" id="2_r7r1n"]
+[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="2_r7r1n"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8c0lk"]
 atlas = ExtResource("1_0qxp5")

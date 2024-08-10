@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5d3k02aa4q07"]
 
-[ext_resource type="Script" path="res://Scenes/Multiplayermunu.gd" id="1_af04n"]
+[ext_resource type="Script" path="res://Scripts/Multiplayermunu.gd" id="1_af04n"]
 [ext_resource type="FontFile" uid="uid://c8c03jmsxuu37" path="res://Fonts/Minecraft.ttf" id="1_gidyg"]
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="2_c36eg"]
 [ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="4_74c5i"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66prk"]
 texture = ExtResource("4_74c5i")

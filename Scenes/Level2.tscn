@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_366nl"]
 [ext_resource type="PackedScene" uid="uid://1tlcqkdqjlte" path="res://Scenes/node_2d.tscn" id="2_0sx7x"]
 [ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="3_ai6o8"]
-[ext_resource type="PackedScene" uid="uid://csnv0a757drvr" path="res://Scripts/torch.tscn" id="4_tq8vu"]
+[ext_resource type="PackedScene" uid="uid://csnv0a757drvr" path="res://Scenes/torch.tscn" id="4_tq8vu"]
 [ext_resource type="PackedScene" uid="uid://dpohe6mowaaxx" path="res://Scenes/moving_spike.tscn" id="4_wgrbd"]
 [ext_resource type="PackedScene" uid="uid://cpkrcngbueap0" path="res://Scenes/Flicker.tscn" id="6_h2qku"]
 [ext_resource type="Texture2D" uid="uid://dja3mu0iw4en7" path="res://Assets/Images/Pressure_plate.png" id="7_a6tiq"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://pthaolap044m" path="res://Scenes/rope.tscn" id="13_ynd30"]
 [ext_resource type="AudioStream" uid="uid://bo1oq54o4ffws" path="res://Sounds/eeee.ogg" id="14_stio5"]
 [ext_resource type="PackedScene" uid="uid://ctmdk17cm8mpf" path="res://Scenes/Elec.tscn" id="16_symuo"]
+
 
 [sub_resource type="TileSet" id="TileSet_rkg4o"]
 physics_layer_0/collision_layer = 2

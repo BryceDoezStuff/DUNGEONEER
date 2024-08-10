@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_lxsev"]
 [ext_resource type="PackedScene" uid="uid://1tlcqkdqjlte" path="res://Scenes/node_2d.tscn" id="2_2ano3"]
 [ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="2_i5c2a"]
-[ext_resource type="PackedScene" uid="uid://csnv0a757drvr" path="res://Scripts/torch.tscn" id="4_3bd7y"]
+[ext_resource type="PackedScene" uid="uid://csnv0a757drvr" path="res://Scenes/torch.tscn" id="4_3bd7y"]
 [ext_resource type="PackedScene" uid="uid://dpohe6mowaaxx" path="res://Scenes/moving_spike.tscn" id="4_bj16k"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhudf"]
 texture = ExtResource("2_i5c2a")

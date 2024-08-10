@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://dvnwfvm6dam21"]
 
-[ext_resource type="Script" path="res://Scenes/Main_Menu.gd" id="1_urfah"]
+[ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_urfah"]
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="2_7ja1t"]
 [ext_resource type="Texture2D" uid="uid://baben0rt2y5m0" path="res://Assets/Images/Dungeonerrrs.png" id="3_iq4ph"]
 [ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="4_l8bm3"]
-[ext_resource type="PackedScene" uid="uid://csnv0a757drvr" path="res://Scripts/torch.tscn" id="5_odw6v"]
+[ext_resource type="PackedScene" uid="uid://csnv0a757drvr" path="res://Scenes/torch.tscn" id="5_odw6v"]
 [ext_resource type="AudioStream" uid="uid://d0nw1t3upw2tf" path="res://Sounds/WAVESSKYGRAYSONREM.ogg" id="6_4pcx0"]
 [ext_resource type="PackedScene" uid="uid://drtsk60prpiu4" path="res://Scenes/!.tscn" id="7_imjxu"]
 

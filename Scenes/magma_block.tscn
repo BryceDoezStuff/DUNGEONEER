@@ -1,0 +1,131 @@
+[gd_scene load_steps=20 format=3 uid="uid://c33ppgsow4tit"]
+
+[ext_resource type="Texture2D" uid="uid://b8pwqb345lkc6" path="res://Assets/Images/Stageitem/Mines/Magma_Scroll.png" id="1_vyuss"]
+[ext_resource type="Script" path="res://Scripts/Magma_block.gd" id="2_vvm0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e3u5"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_add46"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2gv"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56bh6"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3hon"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc0i8"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2abi"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jex3"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akjoo"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sguc"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpcyp"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx2yf"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxm5w"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2ovc"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcbej"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3wyg"]
+atlas = ExtResource("1_vyuss")
+region = Rect2(0, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1et4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e3u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_add46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56bh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3hon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc0i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2abi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jex3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akjoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sguc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpcyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx2yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxm5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2ovc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcbej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3wyg")
+}],
+"loop": true,
+"name": &"magma",
+"speed": 15.0
+}]
+
+[node name="Magma_block" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_b1et4")
+animation = &"magma"
+autoplay = "magma"
+frame_progress = 0.825007
+script = ExtResource("2_vvm0d")

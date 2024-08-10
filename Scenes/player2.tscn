@@ -1,6 +1,6 @@
 [gd_scene load_steps=98 format=3 uid="uid://pnmlujjg3pkh"]
 
-[ext_resource type="Script" path="res://Scenes/Player2.gd" id="1_fpjlp"]
+[ext_resource type="Script" path="res://Scripts/Player2.gd" id="1_fpjlp"]
 [ext_resource type="Texture2D" uid="uid://d30ww163urhdv" path="res://Assets/Images/SpriteSheet4bobpayer2.png" id="3_78ask"]
 [ext_resource type="Texture2D" uid="uid://o5ysqnhpcwsj" path="res://Assets/Images/SpriteSheet4bob.png" id="3_v0dob"]
 [ext_resource type="Texture2D" uid="uid://cg5wtf8culxut" path="res://Assets/Images/SpriteSheet5bob.png" id="4_73l82"]
@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://b5q6yh74hytco" path="res://Assets/Images/SpriteSheet4bobpayer2 - tom.png" id="10_e1aw6"]
 [ext_resource type="Texture2D" uid="uid://ck425h4b4u0wf" path="res://Assets/Images/SpriteSheet4bobpayer2 - amy.png" id="11_g0r5i"]
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="11_jg5jl"]
-[ext_resource type="Script" path="res://Scenes/Camera2D2pstufff.gd" id="12_es3lv"]
+[ext_resource type="Script" path="res://Scripts/Camera2D2pstufff.gd" id="12_es3lv"]
 [ext_resource type="PackedScene" uid="uid://nk7joy7np4ua" path="res://Inventory/Inventory(s)/inventory_ui.tscn" id="12_ocpih"]
 [ext_resource type="PackedScene" uid="uid://c82k18yq1rppw" path="res://Scenes/Sign.tscn" id="13_qnr2c"]
 [ext_resource type="PackedScene" uid="uid://ndh0yu3nrg21" path="res://Scenes/Map.tscn" id="13_u8efp"]
 [ext_resource type="Texture2D" uid="uid://blobgurfrke1m" path="res://Assets/Images/GUI/Arrowbut.png" id="14_1lj3e"]
 [ext_resource type="PackedScene" uid="uid://dmtxdbc0norax" path="res://Scenes/Debug_mode.tscn" id="15_uwhv2"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03i8b"]
 atlas = ExtResource("3_v0dob")

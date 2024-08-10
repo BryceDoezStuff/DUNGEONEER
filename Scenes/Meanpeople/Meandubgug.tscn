@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8u0w0ow1hybr"]
+
+[ext_resource type="Script" path="res://testmean.gd" id="1_12bms"]
+[ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="2_8upac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag0rl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_in0ia"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_12bms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ag0rl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8upac")
+offset = Vector2(1, 0)
+hframes = 18
+vframes = 18
+frame = 212
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_in0ia")
+
+[connection signal="area_shape_entered" from="Hitbox" to="." method="_on_hitbox_area_shape_entered"]

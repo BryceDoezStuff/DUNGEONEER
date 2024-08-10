@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://cau4svq5rs20r"]
+
+[ext_resource type="Texture2D" uid="uid://cqykujvrpopas" path="res://Assets/Images/Tilesets/Mines/Water.png" id="1_xylh7"]
+[ext_resource type="Script" path="res://Water.gd" id="2_msn71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30hm3"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbkvh"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8yvn"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whx7f"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwf71"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uipb"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uj03"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbr7d"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbpih"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wf1g"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri0ja"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7060"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrkko"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lbaa"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bgby"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pli18"]
+atlas = ExtResource("1_xylh7")
+region = Rect2(0, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pxp7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30hm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbkvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8yvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whx7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwf71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uipb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uj03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbr7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbpih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wf1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri0ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7060")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrkko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lbaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bgby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pli18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqa20"]
+size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3pxp7")
+frame_progress = 0.614239
+script = ExtResource("2_msn71")
+
+[node name="Waters" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waters"]
+shape = SubResource("RectangleShape2D_gqa20")
+
+[connection signal="body_shape_entered" from="Waters" to="." method="_on_waters_body_shape_entered"]
+[connection signal="body_shape_exited" from="Waters" to="." method="_on_waters_body_shape_exited"]

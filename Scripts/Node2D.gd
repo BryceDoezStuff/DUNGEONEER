@@ -7,6 +7,6 @@ func _ready():
 
 
 func wait_and_play_animation() -> void:
-	await get_tree().create_timer(0.0).timeout
+	await get_tree().create_timer(randi_range(0.5,1)).timeout
 	$AnimatedSprite2D.play("idle")
 	wait_and_play_animation()
