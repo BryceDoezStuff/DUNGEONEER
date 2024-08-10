@@ -1,7 +1,7 @@
 extends Node
 
 var modifer_save = 2
-var water = true
+var water = false
 var facing = null
 var boss_cam = false
 var direction = 1
