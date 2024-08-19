@@ -1,0 +1,13 @@
+hey! , You!
+join adventure (normal) 1
+adventure (happy): Hi iam Eric! What brings you here?
+- *Silent treatment*
+	adventure (normal): Oh, your the silent type, well asumming you want to go out and adventure, your gonna need to pay a fee to leave the city. so I would reccommend going over to jhon, hes usally hanging around the job board. Nice to meet you!
+- To find love
+	adventure (normal): Well i cant really help you with that... asumming you want to go out and adventure, i can help you do that but... your gonna need to pay a fee to leave the city. so I would reccommend going over to jhon, hes usally hanging around the job board. Nice to meet you!
+- Money
+	adventure (happy): Thats great! your gonna need to go to jhon at the job board, he will pay you to do various jobs! Also if you wanna leave the city you will need to pay a fee so you can.. like they say kill 2 birds with one stone, Nice to meet you!
+- Adventure
+	Thats Great! if you wanna leave the city you will need to pay a fee, so you should go over to jhon at the job board
+leave --All-- [animation="Bounce Out"]
+[end_timeline]

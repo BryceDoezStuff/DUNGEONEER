@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnsg7tuggd5j5"]
+
+[ext_resource type="Script" path="res://NPC.gd" id="1_ttdos"]
+[ext_resource type="Texture2D" uid="uid://o5ysqnhpcwsj" path="res://Assets/Images/SpriteSheet4bob.png" id="2_f6eys"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g45er"]
+radius = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btfbr"]
+radius = 3.0
+height = 14.0
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ttdos")
+dio = "eric_meat_seq"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_g45er")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_btfbr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(0, -7)
+texture = ExtResource("2_f6eys")
+hframes = 13
+
+[node name="Label" type="Label" parent="."]
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 2733.0
+offset_bottom = 518.0
+scale = Vector2(0.0206298, 0.0206298)
+theme_override_font_sizes/font_size = 400
+text = "\"E\" To interact"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,20 @@
+join adventure (normal) 1
+adventure: What brings you around here?
+- Adventure
+	adventure: Thats Great! if you wanna leave the city you will need to pay a fee, so you should go over to jhon at the job board
+	leave --All--
+- Money
+	adventure: Thats great! your gonna need to go to jhon at the job board, he will pay you to do various jobs! Also if you wanna leave the city you will need to pay a fee so you can.. like they say kill 2 birds with one stone, Nice to meet you!
+	leave --All--
+- Love
+	adventure: Well i cant really help you with that... asumming you want to go out and adventure, i can help you do that but... your gonna need to pay a fee to leave the city. so I would reccommend going over to jhon, hes usally hanging around the job board. Nice to meet you!
+	leave --All--
+[end_timeline]
+leave adventure [animation="Fade Out Down"]
+[end_timeline]
+[end_timeline]
+[end_timeline]
+[end_timeline]
+[end_timeline]
+[end_timeline]
+[end_timeline]

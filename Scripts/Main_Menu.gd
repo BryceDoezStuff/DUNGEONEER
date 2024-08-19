@@ -6,65 +6,72 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("Panarama")
-
+	$"Opening up".play("Opening_UP")
+	await $"Opening up".animation_finished
+	$AnimationPlayer3.play("Jumble")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	print(option)
-	if option > 4:
+	if option > 2:
 		option = 1
 		print("didit")
 	if option < 1:
-		option = 4
+		option = 2
 		print("didit")
 	
 	if option == 1:
-		$Gui5.visible = true
+		$PlayButton/OPTIONS.visible = true
 	else:
-		$Gui5.visible = false
+		$PlayButton/OPTIONS.visible = false
 	
 	if option == 2:
-		$Gui6.visible = true
+		$PlayButton/HOW2PLAY.visible = true
 	else:
-		$Gui6.visible = false
+		$PlayButton/HOW2PLAY.visible = false
 	
-	if option == 3:
-		$Gui2.visible = true
-	else:
-		$Gui2.visible = false
-	if option == 4:
-		$Gui7.visible = true
-		$Node2D.hide()
-	else:
-		$Gui7.visible = false
-		$Node2D.show()
+	
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/CharSelect.tscn")
-	Global.level = 2
+	Save._load()
+	$AudioStreamPlayer.play()
+	if Global.save == 1:
+		get_tree().change_scene_to_file("res://rooms/Firstarea/room1/room1.tscn")
+	if Global.save == 2:
+		get_tree().change_scene_to_file("res://rooms/Firstarea/room2/room2.tscn")
+	if Global.save == 3:
+		get_tree().change_scene_to_file("res://rooms/Firstarea/room3/room3.tscn")
+	#SceneTrans.change_scene_to_file("res://level_selectbeta.tscn")
+	#Global.level = 2
 
 func _on_play_tot_pressed():
+	$AudioStreamPlayer.play()
 	pass
 
 
 func _on_option_2_pressed():
+	$AudioStreamPlayer.play()
 	option = option +1
 
 
 func _on_option_3_pressed():
+	$AudioStreamPlayer.play()
 	option = option -1
 
 
 func _on_option_1_pressed():
-	if option == 3:
-		get_tree().change_scene_to_file("res://Scenes/How2play.tscn")
-	Global.level = 1
+	$AudioStreamPlayer.play()
 	if option == 2:
-		pass
+		SceneTrans.change_scene_to_file("res://Scenes/How2play.tscn")
 	if option == 1:
-		pass
-	if option == 4:
-		get_tree().change_scene_to_file("res://Scenes/Multiplayermunu.tscn")
+		SceneTrans.change_scene_to_file("res://options.tscn")
 
 func _on_exit_2_pressed():
+	$AudioStreamPlayer.play()
 	get_tree().quit()
+
+
+func _on_creds_pressed():
+	$AudioStreamPlayer.play()
+	SceneTrans.change_scene_to_file("res://options.tscn")

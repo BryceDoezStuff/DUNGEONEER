@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b2k3ixwpq4wah" path="res://Assets/Images/GUI.png" id="2_c36eg"]
 [ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="4_74c5i"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66prk"]
 texture = ExtResource("4_74c5i")
 1:0/0 = 0

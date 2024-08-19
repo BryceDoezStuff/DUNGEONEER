@@ -1,0 +1,59 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {
+"Mood 1": {
+"mode": 0,
+"name": "Mood 1",
+"pitch_base": 0.9,
+"pitch_variance": 0.0,
+"skip_characters": 4.0,
+"sound_path": "res://Assets/Images/GUI/HUD/bob.ogg",
+"volume_base": 0.0,
+"volume_variance": 0.0
+}
+},
+"style": ""
+},
+"default_portrait": "Normal",
+"description": "Bob..thats it!",
+"display_name": "Bob",
+"mirror": false,
+"nicknames": ["Bob"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Normal": {
+"image": "res://Assets/Images/GUI/Char_portraites/bob.png",
+"mirror": true,
+"offset": Vector2(-150, 0),
+"scale": 0.5,
+"scene": ""
+},
+"Very_Unhappy": {
+"image": "res://Assets/Images/GUI/Char_portraites/bob__very_unhappy.png",
+"mirror": true,
+"offset": Vector2(-150, 0),
+"scale": 0.5,
+"scene": ""
+},
+"dead\\": {
+"ignore_char_scale": false,
+"image": "res://Assets/Images/GUI/Char_portraites/bob__very_dead.png",
+"mirror": true,
+"offset": Vector2(-150, 0),
+"scale": 0.5,
+"scene": ""
+},
+"unhappy": {
+"image": "res://Assets/Images/GUI/Char_portraites/bob_unhappy.png",
+"mirror": true,
+"offset": Vector2(-150, 0),
+"scale": 0.5,
+"scene": ""
+}
+},
+"scale": 1.0
+}

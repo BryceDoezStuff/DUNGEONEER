@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd037tehnsr3v"]
+
+[ext_resource type="TileSet" uid="uid://byk3i7pv5l2ig" path="res://Scenes/Tileset.tres" id="1_uwmpy"]
+[ext_resource type="Script" path="res://Scenes/door.gd" id="2_53t2v"]
+
+[sub_resource type="Animation" id="Animation_svdko"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_ofcin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5k0i"]
+_data = {
+"RESET": SubResource("Animation_ofcin"),
+"up": SubResource("Animation_svdko")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2_53t2v")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_uwmpy")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 524289, 6, 65536, 524289, 6, 131072, 524289, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f5k0i")
+}

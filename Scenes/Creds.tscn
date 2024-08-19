@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3 uid="uid://bib48poytbvab"]
+
+[ext_resource type="Texture2D" uid="uid://x4vrdbi5ghc0" path="res://Assets/Images/Logo/GUI/0.5/demo/Dungeoners - 0.5 - demo.png" id="1_dkbac"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -49.0
+offset_top = -107.0
+offset_right = 2918.0
+offset_bottom = 439.0
+scale = Vector2(0.0312993, 0.0312993)
+theme_override_font_sizes/font_size = 400
+text = "DUNGEONEERS"
+horizontal_alignment = 1
+
+[node name="DungeonerrrsDemo" type="Sprite2D" parent="."]
+position = Vector2(3, -89)
+scale = Vector2(1.275, 1.275)
+texture = ExtResource("1_dkbac")
+offset = Vector2(0, 2)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -53.0
+offset_right = 2922.0
+offset_bottom = 493.0
+scale = Vector2(0.0312993, 0.0312993)
+theme_override_font_sizes/font_size = 400
+text = "CODE"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -36.0
+offset_right = 3433.0
+offset_bottom = 510.0
+scale = Vector2(0.0205521, 0.0205521)
+theme_override_font_sizes/font_size = 400
+text = "BRYCEDOEZSTUFF"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -14.0
+offset_right = 2922.0
+offset_bottom = 532.0
+scale = Vector2(0.0312993, 0.0312993)
+theme_override_font_sizes/font_size = 400
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 3.0
+offset_right = 3501.0
+offset_bottom = 549.0
+scale = Vector2(0.0205521, 0.0205521)
+theme_override_font_sizes/font_size = 400
+text = "GRAYSON REMPEL"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 28.0
+offset_right = 3367.0
+offset_bottom = 574.0
+scale = Vector2(0.0312993, 0.0312993)
+theme_override_font_sizes/font_size = 400
+text = "ART / ANIMATION"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 45.0
+offset_right = 3501.0
+offset_bottom = 591.0
+scale = Vector2(0.0205521, 0.0205521)
+theme_override_font_sizes/font_size = 400
+text = "BRYCEDOEZSTUFF"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 69.0
+offset_right = 3367.0
+offset_bottom = 615.0
+scale = Vector2(0.0312993, 0.0312993)
+theme_override_font_sizes/font_size = 400
+text = "PLAYTESTERS"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 86.0
+offset_right = 3501.0
+offset_bottom = 632.0
+scale = Vector2(0.0205521, 0.0205521)
+theme_override_font_sizes/font_size = 400
+text = "WESDOEZSTUFF"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 0
+offset_left = -204.0
+offset_top = -110.0
+offset_right = 221.0
+offset_bottom = 121.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

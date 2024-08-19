@@ -27,7 +27,3 @@ func _on_area_2d_2_body_shape_entered(body_rid, body, body_shape_index, local_sh
 var is_triggered = false
 var is_triggered2 = false
 var is_triggered3 = false
-
-
-
-

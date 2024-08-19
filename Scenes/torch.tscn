@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://csnv0a757drvr"]
+[gd_scene load_steps=10 format=3 uid="uid://csnv0a757drvr"]
 
 [ext_resource type="Script" path="res://Scripts/Node2D.gd" id="1_ymu32"]
 [ext_resource type="Texture2D" uid="uid://bey0q73hown1h" path="res://Assets/Images/Stageitem/TorchSheet.png" id="2_k2wxl"]
+[ext_resource type="Shader" path="res://Scenes/torch.gdshader" id="3_q8l02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqutc"]
 atlas = ExtResource("2_k2wxl")
@@ -32,6 +33,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jac5m"]
+shader = ExtResource("3_q8l02")
+shader_parameter/rect_size = Vector2(-0.01, -0.08)
+shader_parameter/bness = 1.0
+shader_parameter/fall_off_scale = 3.0
+shader_parameter/b_offset = 0.0
+
+[sub_resource type="Gradient" id="Gradient_jy6s0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ymu32")
 
@@ -39,3 +50,28 @@ script = ExtResource("1_ymu32")
 sprite_frames = SubResource("SpriteFrames_2gin0")
 animation = &"idle"
 frame_progress = 0.162077
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jac5m")
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+color = Color(0.213703, 0.121787, 0.0127252, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -5)
+preprocess = 81.08
+speed_scale = 0.3
+explosiveness = 0.3
+randomness = 1.0
+lifetime_randomness = 1.0
+fract_delta = false
+gravity = Vector2(0, -50)
+angle_min = 105.5
+angle_max = 105.5
+scale_amount_min = 0.0
+color = Color(1, 1, 0.223529, 1)
+color_ramp = SubResource("Gradient_jy6s0")
+hue_variation_min = 0.32
+hue_variation_max = 0.32

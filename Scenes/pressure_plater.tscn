@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cne28h3qvfi4e"]
+
+[ext_resource type="Texture2D" uid="uid://dja3mu0iw4en7" path="res://Assets/Images/Pressure_plate.png" id="1_4vuyt"]
+[ext_resource type="Script" path="res://pressure.gd" id="2_q575a"]
+[ext_resource type="TileSet" uid="uid://23ugm27sjh6t" path="res://Scenes/new_tile_set.tres" id="3_pqo56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiomh"]
+atlas = ExtResource("1_4vuyt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dilcl"]
+atlas = ExtResource("1_4vuyt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7pgf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiomh")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dilcl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_155sk"]
+size = Vector2(14, 9)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7pgf8")
+animation = &"idle"
+script = ExtResource("2_q575a")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_pqo56")
+use_kinematic_bodies = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_155sk")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

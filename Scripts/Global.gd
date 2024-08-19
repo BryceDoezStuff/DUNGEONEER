@@ -1,5 +1,13 @@
 extends Node
 
+
+
+var talking = false
+var max_player_health = 3
+var player_health = 1
+var vhs = false
+var version = 0.5
+var save = 2
 var modifer_save = 2
 var water = false
 var facing = null
@@ -19,17 +27,27 @@ var songplayin2 = false
 var songnamewriter = "Now Playin': Windsheets | by Grayson Rempel"
 var level = 0
 var songnotmuted = true
-var player_health = 3
 var mp = false
 var money = 0
 var Charachter = 1
 var Charachter2 = 1
 var camera = 1
-
-
+var s = false
+var spectaotrttoggle = 0
 
 
 func _process(delta):
+	if player_health > max_player_health:
+		player_health = max_player_health
+	if Input.is_action_just_pressed("Spectator"):
+		spectaotrttoggle += 1
+		if spectaotrttoggle > 1:
+			spectaotrttoggle = 0
+	if spectaotrttoggle == 1:
+		s = true
+	elif spectaotrttoggle == 0:
+		s = false
+	print("THE THING", save)
 	print("Money", money)
 	if AMMO > 99:
 		AMMO = 99
@@ -41,7 +59,6 @@ func _process(delta):
 		Global.player_health = Global.player_health +3
 		get_tree().reload_current_scene()
 func _ready():
-		
 	if level == 1:
 		get_tree().change_scene_to_file("res://Scenes/Level1.tscn")
 	if level == 2:

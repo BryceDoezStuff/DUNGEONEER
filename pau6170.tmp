@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://cot1snwwrwnxc"]
+
+[ext_resource type="Script" path="res://Pause.gd" id="1_q2k61"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q2k61")
+
+[node name="Back to Home" type="Button" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 221.0
+offset_right = 3113.0
+offset_bottom = 775.0
+scale = Vector2(0.153712, 0.153712)
+theme_override_font_sizes/font_size = 400
+text = "Back To Home"
+
+[node name="Quit To Deskop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 394.0
+offset_right = 3377.0
+offset_bottom = 948.0
+scale = Vector2(0.153712, 0.153712)
+theme_override_font_sizes/font_size = 400
+text = "Quit to Desktop"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 52.0
+offset_right = 1939.0
+offset_bottom = 598.0
+scale = Vector2(0.206826, 0.206826)
+theme_override_font_sizes/font_size = 400
+text = "PAUSED"
+
+[connection signal="pressed" from="Quit To Deskop" to="." method="_on_quit_to_deskop_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhn4x233yuk22"]
+
+[ext_resource type="Texture2D" uid="uid://xjt34s1hhh3j" path="res://Assets/Images/Characters/Means/Arrowman.png" id="1_lxfip"]
+[ext_resource type="Script" path="res://Spectator_Mode.gd" id="2_bnk0l"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_lxfip")
+hframes = 4
+frame = 2
+script = ExtResource("2_bnk0l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)

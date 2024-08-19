@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://hufk4uy2d0hb"]
+
+[ext_resource type="Texture2D" uid="uid://bkasiba0vqxb6" path="res://Assets/Images/Cutscences/Sprite-0003.png" id="1_hhab3"]
+[ext_resource type="Shader" path="res://shadow.gdshader" id="1_unubl"]
+[ext_resource type="Shader" path="res://Shining.gdshader" id="3_hwj7i"]
+[ext_resource type="Texture2D" uid="uid://xdb55e5bgcmd" path="res://Assets/Images/icon.svg" id="3_jk2ow"]
+[ext_resource type="Shader" path="res://Light2d.gdshader" id="5_hjds8"]
+[ext_resource type="Shader" path="res://Shine.gdshader" id="5_pn8ut"]
+[ext_resource type="Texture2D" uid="uid://cbxiemdjio21k" path="res://Assets/Images/Logo/Promotional/Light.png" id="6_i8tuf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f36n1"]
+shader = ExtResource("1_unubl")
+shader_parameter/borderScale = 2.0
+shader_parameter/offset = Vector2(-1, -1)
+shader_parameter/color = Color(0, 0, 0, 0.294118)
+shader_parameter/debug = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qja24"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flys7"]
+shader = ExtResource("3_hwj7i")
+shader_parameter/size_effect = 0.1
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_867jb"]
+shader = ExtResource("5_pn8ut")
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/frequency = 0.5
+shader_parameter/highlight_speed = 5.282
+shader_parameter/highlight_width = 11.97
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hss4b"]
+shader = ExtResource("5_hjds8")
+shader_parameter/light_color = Vector3(450, 300, -400)
+shader_parameter/brightness = 0.121
+shader_parameter/attenuation_strength = 0.303
+shader_parameter/intensity = 7.185
+shader_parameter/max_brightness = 0.8
+shader_parameter/light_texture = ExtResource("6_i8tuf")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -21.0
+offset_right = 1.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite-0003" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_f36n1")
+position = Vector2(415, 274)
+texture = ExtResource("1_hhab3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(416, 292)
+zoom = Vector2(5, 5)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_qja24")
+layout_mode = 0
+offset_left = 270.0
+offset_top = 217.0
+offset_right = 398.0
+offset_bottom = 368.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 217.0
+offset_right = 562.0
+offset_bottom = 368.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_flys7")
+position = Vector2(141, 334)
+rotation = -3.14159
+scale = Vector2(1, 1.78906)
+texture = ExtResource("3_jk2ow")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_867jb")
+position = Vector2(667, 322)
+rotation = -3.14159
+scale = Vector2(1, 1.78906)
+texture = ExtResource("3_jk2ow")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 9
+material = SubResource("ShaderMaterial_hss4b")
+position = Vector2(417, 274)
+scale = Vector2(0.559, 0.570313)
+texture = ExtResource("3_jk2ow")

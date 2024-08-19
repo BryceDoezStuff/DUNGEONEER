@@ -1,10 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://cl0drvntttf5t"]
+[gd_scene load_steps=28 format=3 uid="uid://cl0drvntttf5t"]
 
 [ext_resource type="Script" path="res://Scripts/Player (3).gd" id="1_2oj1t"]
 [ext_resource type="Script" path="res://Scenes/Delt.gd" id="2_0b1jr"]
 [ext_resource type="Texture2D" uid="uid://i1br2ioq5h6h" path="res://Assets/Images/SpriteSheet4bob (2).png" id="2_m4y4f"]
 [ext_resource type="Texture2D" uid="uid://o5ysqnhpcwsj" path="res://Assets/Images/SpriteSheet4bob.png" id="3_kcuhw"]
 [ext_resource type="Texture2D" uid="uid://cg5wtf8culxut" path="res://Assets/Images/SpriteSheet5bob.png" id="3_s2nxs"]
+[ext_resource type="Shader" path="res://shadow.gdshader" id="3_ygecb"]
+[ext_resource type="PackedScene" uid="uid://cot1snwwrwnxc" path="res://pause.tscn" id="6_j5f3j"]
+[ext_resource type="PackedScene" uid="uid://dmtxdbc0norax" path="res://Scenes/Debug_mode.tscn" id="8_0lwjf"]
+[ext_resource type="PackedScene" uid="uid://g20c60fdfgu3" path="res://CRTACT.tscn" id="9_a25ob"]
+[ext_resource type="PackedScene" uid="uid://brelwi65ylv1b" path="res://Music_Thingy.tscn" id="9_tpksy"]
+[ext_resource type="PackedScene" uid="uid://cp12qnon6p0bk" path="res://Scenes/HUD.tscn" id="10_mxfo4"]
+[ext_resource type="Shader" path="res://Scenes/shield.gdshader" id="12_oxgm2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p6nhr"]
 radius = 3.0
@@ -76,7 +83,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/5/type = "value"
@@ -114,6 +121,57 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Shield:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.307114, 0.307114)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Shield:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_464x6"]
+resource_name = "Shield"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shield:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.340559, 0.340559), Vector2(0.630619, 0.630619)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shield:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5, -5), Vector2(-9, -9)]
 }
 
 [sub_resource type="Animation" id="Animation_cwkd0"]
@@ -306,7 +364,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -329,7 +387,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 1, 2]
 }
 tracks/3/type = "value"
@@ -406,7 +464,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [3]
 }
 
@@ -446,13 +504,14 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [3, 4, 5, 6, 7, 8, 7, 6, 4, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8wr65"]
 _data = {
 "RESET": SubResource("Animation_2vove"),
+"Shield": SubResource("Animation_464x6"),
 "attack": SubResource("Animation_cwkd0"),
 "attack_2": SubResource("Animation_wxmbv"),
 "idle": SubResource("Animation_eab6d"),
@@ -460,9 +519,27 @@ _data = {
 "run": SubResource("Animation_g4nj5")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8p7w"]
+shader = ExtResource("3_ygecb")
+shader_parameter/borderScale = 1.0
+shader_parameter/offset = Vector2(1, 1)
+shader_parameter/color = Color(0, 0, 0, 0.670588)
+shader_parameter/debug = false
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7va3u"]
 radius = 3.0
 height = 14.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jlu7k"]
+shader = ExtResource("3_ygecb")
+shader_parameter/borderScale = 1.0
+shader_parameter/offset = Vector2(1, 1)
+shader_parameter/color = Color(0, 0, 0, 0.392157)
+shader_parameter/debug = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0wi0"]
+shader = ExtResource("12_oxgm2")
+shader_parameter/color = Color(0.575092, 0.867502, 1, 0.792157)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -501,6 +578,8 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.14902, 1, 1)
+material = SubResource("ShaderMaterial_x8p7w")
 position = Vector2(0, 1)
 scale = Vector2(-1, 1)
 texture = ExtResource("3_kcuhw")
@@ -520,7 +599,7 @@ wait_time = 0.19
 one_shot = true
 
 [node name="Dashcooldown" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 3.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -535,9 +614,52 @@ shape = SubResource("CapsuleShape2D_7va3u")
 [node name="Attck" type="Sprite2D" parent="."]
 visible = false
 z_index = 4096
+material = SubResource("ShaderMaterial_jlu7k")
 position = Vector2(-2, 2)
 texture = ExtResource("3_s2nxs")
 hframes = 6
 frame = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("6_j5f3j")]
+offset_left = -1.0
+offset_right = -1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource("9_tpksy")]
+position = Vector2(0, 692)
+
+[node name="Debug_menu" parent="CanvasLayer" instance=ExtResource("8_0lwjf")]
+offset_left = 3.0
+offset_right = 3.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D2" parent="CanvasLayer" instance=ExtResource("10_mxfo4")]
+z_index = -1
+position = Vector2(107, 114)
+scale = Vector2(3.81034, 3.81034)
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("9_a25ob")]
+visible = false
+
+[node name="Shield" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_i0wi0")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.307114, 0.307114)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="timeout" from="Dashcooldown" to="." method="_on_dashcooldown_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

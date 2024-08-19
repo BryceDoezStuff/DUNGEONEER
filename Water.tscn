@@ -1,7 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://cau4svq5rs20r"]
+[gd_scene load_steps=23 format=3 uid="uid://cau4svq5rs20r"]
 
 [ext_resource type="Texture2D" uid="uid://cqykujvrpopas" path="res://Assets/Images/Tilesets/Mines/Water.png" id="1_xylh7"]
 [ext_resource type="Script" path="res://Water.gd" id="2_msn71"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xg3ch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_30hm3"]
 atlas = ExtResource("1_xylh7")
@@ -123,10 +125,13 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n84ej"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqa20"]
 size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_xg3ch")
 sprite_frames = SubResource("SpriteFrames_3pxp7")
 frame_progress = 0.614239
 script = ExtResource("2_msn71")
@@ -136,6 +141,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waters"]
+material = SubResource("ShaderMaterial_n84ej")
 shape = SubResource("RectangleShape2D_gqa20")
 
 [connection signal="body_shape_entered" from="Waters" to="." method="_on_waters_body_shape_entered"]

@@ -1,0 +1,229 @@
+[gd_scene load_steps=14 format=3 uid="uid://cp12qnon6p0bk"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_wm7sc"]
+[ext_resource type="Shader" path="res://shadow.gdshader" id="2_dyihv"]
+[ext_resource type="Texture2D" uid="uid://do3u5spnynl2l" path="res://Assets/Images/GUI/HUD/back.png" id="2_ksk8t"]
+[ext_resource type="Texture2D" uid="uid://bx7udu1u36ilm" path="res://Assets/Images/GUI/HUD/Health_Point.png" id="3_7x0mr"]
+[ext_resource type="Texture2D" uid="uid://cahis0r1dskhj" path="res://Assets/Images/GUI/HUD/Bob_Head_HUD.png" id="4_bxrig"]
+[ext_resource type="Shader" path="res://Scenes/Hit flash.gdshader" id="5_b6a03"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7t3e1"]
+shader = ExtResource("2_dyihv")
+shader_parameter/borderScale = 2.0
+shader_parameter/offset = Vector2(2, -2)
+shader_parameter/color = Color(0, 0, 0, 0.196078)
+shader_parameter/debug = false
+
+[sub_resource type="Animation" id="Animation_ss37u"]
+resource_name = "Hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bobhead:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bobhead:material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bobhead:material:shader_parameter/active")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_le1rx"]
+shader = ExtResource("5_b6a03")
+shader_parameter/active = false
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_ij7tx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bobhead:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bobhead:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bobhead:material")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_le1rx")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bobhead:material:shader_parameter/active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bobhead/Shadow:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_1esop"]
+resource_name = "Up_down"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bobhead:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bobhead/Shadow:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ps2c0"]
+_data = {
+"Hurt": SubResource("Animation_ss37u"),
+"RESET": SubResource("Animation_ij7tx"),
+"Up_down": SubResource("Animation_1esop")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77tdk"]
+shader = ExtResource("2_dyihv")
+shader_parameter/borderScale = 1.0
+shader_parameter/offset = Vector2(2, -2)
+shader_parameter/color = Color(0, 0, 0, 0.196078)
+shader_parameter/debug = false
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wm7sc")
+
+[node name="Back" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_7t3e1")
+position = Vector2(28, 0)
+texture = ExtResource("2_ksk8t")
+
+[node name="HealthPoint" type="Sprite2D" parent="."]
+position = Vector2(26, -9)
+texture = ExtResource("3_7x0mr")
+hframes = 2
+frame = 1
+
+[node name="HealthPoint2" type="Sprite2D" parent="."]
+position = Vector2(36, -9)
+texture = ExtResource("3_7x0mr")
+hframes = 2
+frame = 1
+
+[node name="HealthPoint3" type="Sprite2D" parent="."]
+position = Vector2(46, -9)
+texture = ExtResource("3_7x0mr")
+hframes = 2
+frame = 1
+
+[node name="HealthPoint4" type="Sprite2D" parent="."]
+position = Vector2(46, -16)
+texture = ExtResource("3_7x0mr")
+hframes = 2
+frame = 1
+
+[node name="HealthPoint5" type="Sprite2D" parent="."]
+position = Vector2(36, -16)
+texture = ExtResource("3_7x0mr")
+hframes = 2
+frame = 1
+
+[node name="HealthPoint6" type="Sprite2D" parent="."]
+position = Vector2(26, -16)
+texture = ExtResource("3_7x0mr")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ps2c0")
+}
+
+[node name="bobhead" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_le1rx")
+position = Vector2(3, 2)
+texture = ExtResource("4_bxrig")
+offset = Vector2(0, -1)
+hframes = 4
+frame = 3
+
+[node name="Shadow" type="Sprite2D" parent="bobhead"]
+z_index = -1
+material = SubResource("ShaderMaterial_77tdk")
+texture = ExtResource("4_bxrig")
+offset = Vector2(0, -1)
+hframes = 4

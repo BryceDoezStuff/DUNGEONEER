@@ -1,8 +1,12 @@
 extends Node2D
 
 
+var been_here = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.save = 1
+	Save.save()
 	pass # Replace with function body.
 
 
@@ -12,5 +16,6 @@ func _process(delta):
 
 
 func _on_end_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	been_here = true
 	if body is Player:
-		SceneTrans.change_scene_to_file("res://rooms/room2/room2.tscn")
+		SceneTrans.change_scene_to_file("res://rooms/Firstarea/room2/room2.tscn")
