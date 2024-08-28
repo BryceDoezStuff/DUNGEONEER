@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://56r4c5r8i4a6"]
+
+[ext_resource type="Texture2D" uid="uid://b15bi1dgw8eyx" path="res://Assets/Images/Tilesets/Tilemap1.png" id="1_opbjx"]
+[ext_resource type="Script" path="res://Scripts/Climbable_wall.gd" id="2_p0ayp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xd1l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpp2y"]
+size = Vector2(37, 16)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_opbjx")
+hframes = 18
+vframes = 18
+frame = 116
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6xd1l")
+
+[node name="climeable_wall" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_p0ayp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="climeable_wall"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_vpp2y")
+debug_color = Color(0.756781, 0.45481, 0, 0.42)
+
+[connection signal="body_shape_entered" from="climeable_wall" to="climeable_wall" method="_on_body_shape_entered"]

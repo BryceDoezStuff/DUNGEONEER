@@ -2,12 +2,13 @@ extends CharacterBody2D
 class_name Player
 
 
+var climbing = false
 var dash_cooldown = false
 var animation_playing = false
 var dashing = false
 var speed = 2   #75= is speed
 var jump_force = 215
-var gravity = 9.5
+var gravity = 20
 var isattack = false
 var dash_speed = 1000
 var jumps = 2545454
@@ -26,6 +27,10 @@ func _ready():
 
 
 func _process(delta):
+	if dashing:
+		$CPUParticles2D2.emitting = true
+	else:
+		$CPUParticles2D2.emitting = false
 	jumps = Global.modifier
 	if ontrack:
 		$AnimationPlayer.play("attack_2")
@@ -39,12 +44,12 @@ func _process(delta):
 		$timerattack.start()
 		if Global.facing == 0:
 			$AnimationPlayer.play("attack")
-			await $AnimationPlayer.animation_finished
+			await $AnimationPlayer.animation_finished and get_tree().create_timer(3).timeout
 			isattack = false
 			$AnimationPlayer.play("idle")
 		if Global.facing == 1:
 			$AnimationPlayer.play("attack_2")
-			await $AnimationPlayer.animation_finished
+			await $AnimationPlayer.animation_finished and get_tree().create_timer(3).timeout
 			isattack = false
 			$AnimationPlayer.play("idle")
 		animation_playing = true
@@ -58,10 +63,10 @@ func _physics_process(delta):
 		$Camera2D.enabled = false
 	if !ontrack and !Global.water and !isattack:
 		speed = 75
-		jump_force = 215
-		gravity = 9.5
+		jump_force = 250
+		gravity = 13
 		Global.modifier = 2
-		if Input.is_action_pressed("left") and !animation_playing and !Global.s and !Global.talking:
+		if Input.is_action_pressed("left") and !animation_playing and !Global.s and !Global.talking and !climbing:
 			$Sprite2D.flip_h = 1
 			$Attck.flip_h = 1
 			$Sprite2D/Shadow.flip_h = 0
@@ -74,7 +79,7 @@ func _physics_process(delta):
 				velocity.x -= dash_speed
 			else:
 				velocity.x = -speed
-		elif Input.is_action_pressed("right") and !animation_playing and !Global.talking:
+		elif Input.is_action_pressed("right") and !animation_playing and !Global.talking and !climbing:
 			$Sprite2D.flip_h = 0
 			$Sprite2D/Shadow.flip_h = 1
 			$Sprite2D/Shadow.offset = Vector2(1,0)
@@ -196,11 +201,14 @@ func _physics_process(delta):
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	pass
 
-func _on_area_2d_area_entered(area):
-	if area.name == "Spring":
-		velocity.y = jump_force
-		print("Spring jump")
+func _on_area_2d_area_entered(area: Area2D):
+	if area.name == "climeable_wall":
+		climbing = true
 
 
 func _on_dashcooldown_timeout():
 	dash_cooldown = false
+
+
+func _on_area_2d_area_exited(area: Area2D):
+	climbing = false

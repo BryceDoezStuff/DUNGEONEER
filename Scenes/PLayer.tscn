@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cl0drvntttf5t"]
+[gd_scene load_steps=29 format=3 uid="uid://cl0drvntttf5t"]
 
 [ext_resource type="Script" path="res://Scripts/Player (3).gd" id="1_2oj1t"]
 [ext_resource type="Script" path="res://Scenes/Delt.gd" id="2_0b1jr"]
@@ -541,13 +541,16 @@ shader_parameter/debug = false
 shader = ExtResource("12_oxgm2")
 shader_parameter/color = Color(0.575092, 0.867502, 1, 0.792157)
 
+[sub_resource type="Gradient" id="Gradient_attta"]
+offsets = PackedFloat32Array(0, 0.857143)
+colors = PackedColorArray(1, 1, 1, 1, 0.410952, 0.00155106, 0.641399, 1)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_2oj1t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 z_index = 1
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_p6nhr")
@@ -607,7 +610,6 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_7va3u")
 
@@ -661,5 +663,22 @@ scale = Vector2(0.307114, 0.307114)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(0, 1)
+amount = 100
+lifetime = 0.2
+preprocess = 81.08
+speed_scale = 0.85
+spread = 72.97
+gravity = Vector2(0, -50)
+angle_min = 105.5
+angle_max = 105.5
+scale_amount_min = 0.0
+color = Color(0, 0.65395, 0.523168, 1)
+color_ramp = SubResource("Gradient_attta")
+hue_variation_min = 0.32
+hue_variation_max = 0.32
+
 [connection signal="timeout" from="Dashcooldown" to="." method="_on_dashcooldown_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

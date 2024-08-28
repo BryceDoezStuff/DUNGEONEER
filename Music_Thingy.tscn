@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://brelwi65ylv1b"]
 
-[ext_resource type="Script" path="res://Music_Thingy.gd" id="1_cuw1m"]
+[ext_resource type="Script" path="res://dialogic-2.0-alpha-10/addons/dialogic/Modules/Clear/Music_Thingy.gd" id="1_cuw1m"]
 [ext_resource type="Texture2D" uid="uid://cbwcpgsthmh4" path="res://Assets/Images/GUI/Menus/Options/Sounds/Bob_Head_Music1.png" id="1_shmvg"]
 
 [sub_resource type="Animation" id="Animation_w7ydq"]

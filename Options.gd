@@ -67,4 +67,3 @@ func _on_check_box_3_toggled(toggled_on):
 		Global.vhs = true
 	elif !toggled_on:
 		Global.vhs = false
-

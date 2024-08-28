@@ -40,6 +40,7 @@ size = Vector2(12, 18)
 sprite_frames = SubResource("SpriteFrames_sbc55")
 animation = &"Spring"
 script = ExtResource("2_xm2ud")
+spring_power = null
 
 [node name="Spring" type="CharacterBody2D" parent="."]
 collision_layer = 2

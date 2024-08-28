@@ -42,8 +42,11 @@ func _on_play_pressed():
 		get_tree().change_scene_to_file("res://rooms/Firstarea/room2/room2.tscn")
 	if Global.save == 3:
 		get_tree().change_scene_to_file("res://rooms/Firstarea/room3/room3.tscn")
+	if Global.save == 4:
+		get_tree().change_scene_to_file("res://rooms/Firstarea/room4/room4.tscn")
+	
 	#SceneTrans.change_scene_to_file("res://level_selectbeta.tscn")
-	#Global.level = 2
+	Global.level = 2
 
 func _on_play_tot_pressed():
 	$AudioStreamPlayer.play()

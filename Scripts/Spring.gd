@@ -23,4 +23,3 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 
 func _on_spring_2_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	$".".play("idle")
-

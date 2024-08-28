@@ -41,7 +41,7 @@ shader_parameter/fall_off_scale = 3.0
 shader_parameter/b_offset = 0.0
 
 [sub_resource type="Gradient" id="Gradient_jy6s0"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.294641, 0.294641, 0.294641, 1)
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ymu32")

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://x4vrdbi5ghc0" path="res://Assets/Images/Logo/GUI/0.5/demo/Dungeoners - 0.5 - demo.png" id="4_8rjhd"]
 [ext_resource type="Texture2D" uid="uid://2jn8h11nke8i" path="res://Assets/Images/Logo/GUI/Old/Dungeoners - old.png" id="4_hcjjn"]
 [ext_resource type="AudioStream" uid="uid://d0nw1t3upw2tf" path="res://Sounds/WAVESSKYGRAYSONREM.ogg" id="6_4pcx0"]
-[ext_resource type="TileSet" uid="uid://dhu301r2ow7he" path="res://Scenes/Tileset.tres" id="6_dyeqd"]
+[ext_resource type="TileSet" uid="uid://byk3i7pv5l2ig" path="res://Scenes/Tileset.tres" id="6_dyeqd"]
 [ext_resource type="PackedScene" uid="uid://drtsk60prpiu4" path="res://Scenes/!.tscn" id="7_imjxu"]
 [ext_resource type="Shader" path="res://shaders/Main_Menu.gdshader" id="7_tjrxv"]
 [ext_resource type="PackedScene" uid="uid://g20c60fdfgu3" path="res://CRTACT.tscn" id="8_g37j1"]
@@ -608,9 +608,9 @@ zoom = Vector2(3, 3)
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = -162.0
+offset_left = -289.0
 offset_top = -40.0
-offset_right = -109.0
+offset_right = -236.0
 offset_bottom = -22.0
 theme_override_font_sizes/font_size = 69
 flat = true
@@ -626,10 +626,10 @@ frame = 48
 
 [node name="Creds" type="Button" parent="."]
 layout_mode = 0
-offset_left = -145.0
-offset_top = 86.0
-offset_right = -92.0
-offset_bottom = 104.0
+offset_left = -287.0
+offset_top = 28.0
+offset_right = -234.0
+offset_bottom = 46.0
 theme_override_font_sizes/font_size = 69
 flat = true
 
@@ -656,9 +656,9 @@ frame = 29
 
 [node name="Exit2" type="Button" parent="."]
 layout_mode = 0
-offset_left = -190.0
+offset_left = 236.0
 offset_top = 85.0
-offset_right = -149.0
+offset_right = 277.0
 offset_bottom = 103.0
 theme_override_font_sizes/font_size = 69
 flat = true
@@ -712,9 +712,9 @@ libraries = {
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = -326.0
+offset_left = -307.0
 offset_top = 6.0
-offset_right = -237.001
+offset_right = -218.001
 offset_bottom = 24.0
 flat = true
 
@@ -813,9 +813,9 @@ mouse_filter = 2
 z_index = -1
 layout_mode = 0
 offset_left = -196.0
-offset_top = -118.0
+offset_top = -353.0
 offset_right = -77.0
-offset_bottom = 118.0
+offset_bottom = -117.0
 mouse_filter = 2
 color = Color(0.369107, 0.369107, 0.369107, 1)
 
@@ -847,6 +847,7 @@ text = "TEST"
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Node2D2" parent="CanvasLayer2" instance=ExtResource("11_o5kjl")]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ojnch")

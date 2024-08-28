@@ -26,7 +26,7 @@ func _on_exit_body_shape_entered(body_rid, body, body_shape_index, local_shape_i
 	if body is Player:
 		Room3.been_here = false
 		Room3.been_here_2 = true
-		SceneTrans.change_scene_to_file("res://rooms/Firstarea/room3/room3.tscn")
+		SceneTrans.change_scene_to_file("res://rooms/Firstarea/room4/room4.tscn")
 
 
 func _on_enter_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
